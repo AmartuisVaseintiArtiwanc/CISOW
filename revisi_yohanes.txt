@@ -1,0 +1,5 @@
+- ada .htaccess yang diganti dari old.htaccess
+- url article by title, setelah itu baru bisa pake id setelah ktemu getArticleDetail
+- permited uri ditambahkan ( ) , !
+- title sudah bisa di klik
+- tukar wow js dari article ke our team

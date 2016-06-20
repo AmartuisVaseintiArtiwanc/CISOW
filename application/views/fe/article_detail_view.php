@@ -121,11 +121,11 @@
         <?php foreach($related_article as $row) { ?>
             <div class="related-article-item">
                 <div class="article-img-wrapper">
-                    <a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['articleID']);?>">
+                    <a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['title']);?>">
                         <img class="img-responsive" src="<?php echo base_url(); ?>img/article/<?=$row['articleID']?>/<?=$row['articleImgLink']?>" width="200" />
                     </a>
                 </div>
-                <h4><a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['articleID']);?>"><?=$row['title']?></a></h4>
+                <h4><a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['title']);?>"><?=$row['title']?></a></h4>
             </div>
         <?php } ?>
     </div><!--Related Article-->
@@ -155,8 +155,8 @@
              *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
              */
             var disqus_config = function () {
-				this.page.url = '<?php echo site_url("fe/article/getArticleDetail/".$data_article->articleID);?>';
-				this.page.identifier = '<?php echo "fe/article/getArticleDetail/".$data_article->articleID;?>';
+				this.page.url = '<?php echo site_url("fe/article/getArticleDetail/".$data_article->title);?>';
+				this.page.identifier = '<?php echo "fe/article/getArticleDetail/".$data_article->title;?>';
 				this.page.title = '<?php echo $data_article->title;?>';
 			};
             (function() {  // DON'T EDIT BELOW THIS LINE

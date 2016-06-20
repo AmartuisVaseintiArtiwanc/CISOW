@@ -75,7 +75,9 @@
 <div class="container">
     <div class="row">
         <div class="content-container col-sm-7" id="content">
-            <?php $this->load->view($main_content); ?>
+            <?php 
+                $this->load->view($main_content);
+            ?>
         </div><!--Content Containter-->
         <div class="content-container col-sm-5" id="advertisement">
             <div class="row ads-container">
@@ -98,7 +100,7 @@
                 <h3 class="head-title">Article Menarik Lainnya</h3>
                 <?php foreach($moreArticles as $row){?>
                     <div class="more-article-item">
-                        <a href="<?=site_url('fe/article/getArticleDetail/'.$row['articleID'])?>" class="article-link">
+                        <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title'])?>" class="article-link">
                             <div class="article-img-container">
                                 <img class="img-responsive" src="<?=base_url();?>img/article/<?=$row['articleID']?>/<?=$row['articleImgLink']?>"/>
                             </div>
