@@ -93,12 +93,11 @@
         <?php
 
         foreach($articles as $row){
-
         ?>
 
         <div class="col-xs-12 article-col">
 
-            <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title'])?>" class="article-link">
+            <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title_url_clean'])?>" class="article-link">
 
                 <div class="article-img-container">
 
@@ -112,7 +111,7 @@
 
                 </div>
 
-                <h3 class="article-title"> <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title'])?>" class="article-link"> <?=$row['title']?> </a> </h3>
+                <h3 class="article-title"> <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title_url_clean'])?>" class="article-link"> <?=$row['title']?> </a> </h3>
 
                 <h5 class="article-date">
 
@@ -128,7 +127,7 @@
 
                 <p><?=$row['description']?></p>
 
-                <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title'])?>"><span class="see-more">See More</span></a>
+                <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title_url_clean'])?>"><span class="see-more">See More</span></a>
 
                 <hr>
 

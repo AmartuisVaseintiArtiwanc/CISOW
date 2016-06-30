@@ -210,8 +210,6 @@ class Article extends CI_Controller{
 
         $more_article = $this->Article_model->getMoreArticle($articleTemp);
 
-
-
         $data['articles']= $latest_post_page;
 
         $data['dataCategory'] = $category;
@@ -631,9 +629,10 @@ class Article extends CI_Controller{
 
      * */
 
-    function getArticleDetail($title)
+    function getArticleDetail($id_or_title)
 
     {
+
 
         $num_per_page = 5;
 
@@ -641,7 +640,12 @@ class Article extends CI_Controller{
 
         $limit = $num_per_page;
 
-        $article =  $this->Article_model->getArticleDetail($title);
+        if(is_numeric($id_or_title)) {
+            $article =  $this->Article_model->getArticleDetailbyId($id_or_title);
+        } else {
+            $id_or_title = str_replace("-"," ",$id_or_title);
+            $article =  $this->Article_model->getArticleDetailbyTitle($id_or_title);
+        }
 
         // GET ID ARTICLE
         $id = $article->articleID;
@@ -649,8 +653,6 @@ class Article extends CI_Controller{
         $tags = $this->Article_tag_model->getArticleTagByArticle($id);
 
         $related_article= $this->Article_model->getRelatedArticle($id);
-
-
 
         $comment = $this -> Article_model->getArticleComments($start,$limit,$id);
 
@@ -699,6 +701,8 @@ class Article extends CI_Controller{
         $data['related_article'] = $related_article;
 
         $data['main_content'] = 'fe/article_detail_view';
+
+        //var_dump($data);
 
         $this->load->view('fe/includes/template_article', $data);
 

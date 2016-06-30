@@ -98,9 +98,12 @@
             </div>
             <div class="row more-article-container">
                 <h3 class="head-title">Article Menarik Lainnya</h3>
-                <?php foreach($moreArticles as $row){?>
+                <?php 
+
+                foreach($moreArticles as $row) {
+                ?>
                     <div class="more-article-item">
-                        <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title'])?>" class="article-link">
+                        <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title_url_clean'])?>" class="article-link">
                             <div class="article-img-container">
                                 <img class="img-responsive" src="<?=base_url();?>img/article/<?=$row['articleID']?>/<?=$row['articleImgLink']?>"/>
                             </div>

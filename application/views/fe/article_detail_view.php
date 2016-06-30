@@ -118,14 +118,16 @@
     <!--Related Article-->
     <div class="row related-article-container">
         <h1>Artikel Terkait</h1>
-        <?php foreach($related_article as $row) { ?>
+        <?php 
+        foreach($related_article as $row) { 
+        ?>
             <div class="related-article-item">
                 <div class="article-img-wrapper">
-                    <a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['title']);?>">
+                    <a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['title_url_clean']);?>">
                         <img class="img-responsive" src="<?php echo base_url(); ?>img/article/<?=$row['articleID']?>/<?=$row['articleImgLink']?>" width="200" />
                     </a>
                 </div>
-                <h4><a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['title']);?>"><?=$row['title']?></a></h4>
+                <h4><a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['title_url_clean']);?>"><?=$row['title']?></a></h4>
             </div>
         <?php } ?>
     </div><!--Related Article-->

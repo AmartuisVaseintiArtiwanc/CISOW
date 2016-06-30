@@ -78,9 +78,9 @@
 
         <li>
 
-            <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title'])?>">
+            <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title_url_clean'])?>">
 
-            <h3 class="article-title"> <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title'])?>"> <?=$row['title']?> </a> </h3>
+            <h3 class="article-title"> <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title_url_clean'])?>"> <?=$row['title']?> </a> </h3>
 
             <div class="article-img-container">
 

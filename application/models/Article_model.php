@@ -68,7 +68,10 @@
 
             description,
 
-            articleImgLink, a.created as created');
+            articleImgLink, a.created as created,
+
+            replace(title,\' \',\'-\') as title_url_clean
+            ');
 
             $this->db->from('tbl_cyberits_t_articles a');
 
@@ -112,7 +115,10 @@
 
             description,
 
-            articleImgLink, a.created as created');
+            articleImgLink, a.created as created,
+
+            replace(title,\' \',\'-\') as title_url_clean
+            ');
 
             $this->db->from('tbl_cyberits_t_articles a');
 
@@ -450,7 +456,7 @@
 
          * */
 
-        function getArticleDetail($title)
+        function getArticleDetailbyTitle($title)
 
         {
 
@@ -458,7 +464,10 @@
 
 			DATE_FORMAT(a.created,\'%d %M %Y\') AS created , a.categoryID as categoryID, category, categoryImgLink,
 
-			b.name ,userDescription,view ,description,content ,AVG(rating) as ratingPerArticle, articleImgLink, userImgLink');
+			b.name ,userDescription,view , description, content ,AVG(rating) as ratingPerArticle, articleImgLink, userImgLink,
+
+            replace(title,\' \',\'-\') as title_url_clean
+            ');
 
 
 
@@ -475,6 +484,46 @@
             $this->db->where(array('a.isActive' =>
 
                 true, 'title' => $title));
+
+
+
+            $this->db->order_by('a.created', 'desc');
+
+            $this->db->group_by('a.articleID');
+
+            $query = $this->db->get();
+
+            return $query->row();
+
+        }
+
+        function getArticleDetailbyId($id)
+
+        {
+
+            $this->db->select('a.articleID as articleID, title,
+
+            DATE_FORMAT(a.created,\'%d %M %Y\') AS created , a.categoryID as categoryID, category, categoryImgLink,
+
+            b.name ,userDescription,view ,description,content ,AVG(rating) as ratingPerArticle, articleImgLink, userImgLink,
+
+            replace(title,\' \',\'-\') as title_url_clean
+            ');
+
+
+            $this->db->from('tbl_cyberits_t_articles a');
+
+            $this->db->join('tbl_cyberits_m_users b', 'b.userID = a.authorID');
+
+            $this->db->join('tbl_cyberits_t_comments c', 'c.articleID = a.articleID', 'left');
+
+            $this->db->join('tbl_cyberits_m_categories d', 'd.categoryID = a.categoryID');
+
+
+
+            $this->db->where(array('a.isActive' =>
+
+                true, 'a.articleID' => $id));
 
 
 
@@ -528,7 +577,7 @@
 
 
 
-            $this->db->select('*');
+            $this->db->select('*, replace(title,\' \',\'-\') as title_url_clean');
 
             $this->db->from('tbl_cyberits_t_articles a');
 
@@ -558,7 +607,10 @@
 
             description, category, a.categoryID,
 
-            articleImgLink, a.created as created');
+            articleImgLink, a.created as created,
+
+            replace(title,\' \',\'-\') as title_url_clean
+            ');
 
             $this->db->from('tbl_cyberits_t_articles a');
 
@@ -588,7 +640,10 @@
 
             description, category, a.categoryID,
 
-            articleImgLink, a.created as created');
+            articleImgLink, a.created as created,
+
+            replace(title,\' \',\'-\') as title_url_clean
+            ');
 
             $this->db->from('tbl_cyberits_t_articles a');
 
