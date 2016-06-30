@@ -168,7 +168,10 @@
 
             description,
 
-            articleImgLink, a.created as created');
+            articleImgLink, a.created as created,
+
+            replace(title,\' \',\'-\') as title_url_clean
+            ');
 
             $this->db->from('tbl_cyberits_t_articles a');
 
