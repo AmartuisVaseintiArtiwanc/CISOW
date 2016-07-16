@@ -225,7 +225,10 @@
 
             description, category, a.categoryID,
 
-            articleImgLink, a.created as created');
+            articleImgLink, a.created as created,
+
+            replace(title,\' \',\'-\') as title_url_clean
+            ');
 
             $this->db->from('tbl_cyberits_t_articles a');
 
@@ -287,7 +290,12 @@
 
             description, category, a.categoryID,
 
-            articleImgLink, a.created as created');
+            articleImgLink, a.created as created,
+
+            replace(b.name,\' \',\'-\') as name_url_clean,
+
+            replace(title,\' \',\'-\') as title_url_clean
+            ');
 
             $this->db->from('tbl_cyberits_t_articles a');
 
@@ -459,86 +467,43 @@
 
          * */
 
-        function getArticleDetailbyTitle($title)
-
-        {
-
-            $this->db->select('a.articleID as articleID, title,
-
-			DATE_FORMAT(a.created,\'%d %M %Y\') AS created , a.categoryID as categoryID, category, categoryImgLink,
-
-			b.name ,userDescription,view , description, content ,AVG(rating) as ratingPerArticle, articleImgLink, userImgLink,
-
-            replace(title,\' \',\'-\') as title_url_clean
-            ');
-
-
-
-            $this->db->from('tbl_cyberits_t_articles a');
-
-            $this->db->join('tbl_cyberits_m_users b', 'b.userID = a.authorID');
-
-            $this->db->join('tbl_cyberits_t_comments c', 'c.articleID = a.articleID', 'left');
-
-            $this->db->join('tbl_cyberits_m_categories d', 'd.categoryID = a.categoryID');
-
-
-
-            $this->db->where(array('a.isActive' =>
-
-                true, 'title' => $title));
-
-
-
-            $this->db->order_by('a.created', 'desc');
-
-            $this->db->group_by('a.articleID');
-
-            $query = $this->db->get();
-
-            return $query->row();
-
+        function getArticleDetailbyTitle($title) {
+            $is_id = FALSE;
+            $retval = $this->getArticleDetail($title, $is_id);
+            return $retval;
         }
 
-        function getArticleDetailbyId($id)
+        function getArticleDetailbyId($id) {
+            $retval = $this->getArticleDetail($id);
+            return $retval;
+        }
 
-        {
-
-            $this->db->select('a.articleID as articleID, title,
-
-            DATE_FORMAT(a.created,\'%d %M %Y\') AS created , a.categoryID as categoryID, category, categoryImgLink,
-
-            b.name ,userDescription,view ,description,content ,AVG(rating) as ratingPerArticle, articleImgLink, userImgLink,
-
-            replace(title,\' \',\'-\') as title_url_clean
-            ');
-
-
+        function getArticleDetail($id_or_title, $is_id = TRUE) {
+            $this->db->select(  'a.articleID as articleID, title,
+                                DATE_FORMAT(a.created,\'%d %M %Y\') AS created , a.categoryID as categoryID, category, categoryImgLink,
+                                b.name ,userDescription,view ,description,content ,AVG(rating) as ratingPerArticle, articleImgLink, userImgLink,
+                                replace(b.name,\' \',\'-\') as name_url_clean,
+                                replace(title,\' \',\'-\') as title_url_clean
+                            ');
             $this->db->from('tbl_cyberits_t_articles a');
-
             $this->db->join('tbl_cyberits_m_users b', 'b.userID = a.authorID');
-
             $this->db->join('tbl_cyberits_t_comments c', 'c.articleID = a.articleID', 'left');
-
             $this->db->join('tbl_cyberits_m_categories d', 'd.categoryID = a.categoryID');
-
-
-
-            $this->db->where(array('a.isActive' =>
-
-                true, 'a.articleID' => $id));
-
-
+            
+            if($is_id) {
+                $this->db->where(array( 'a.isActive' => true, 
+                                        'a.articleID' => $id_or_title));
+            } else {
+                $this->db->where(array( 'a.isActive' => true, 
+                                        'title' => $id_or_title));
+            }
 
             $this->db->order_by('a.created', 'desc');
-
             $this->db->group_by('a.articleID');
-
             $query = $this->db->get();
-
             return $query->row();
-
         }
+
 
 
 

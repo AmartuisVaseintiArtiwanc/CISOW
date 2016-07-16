@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Article | Cyber IT Solutions</title>
+    <title><?php echo $title_tag;?></title>
     <link href="<?=base_url()?>img/favicon.ico" rel="shortcut icon">
     <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=base_url()?>css/article.css" rel="stylesheet">
@@ -101,9 +101,11 @@
                 <?php 
 
                 foreach($moreArticles as $row) {
+                    $id_or_title = str_replace("\"","(-)",$row['title_url_clean']);
+                    $title_url_clean = $id_or_title;
                 ?>
                     <div class="more-article-item">
-                        <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title_url_clean'])?>" class="article-link">
+                        <a href="<?=site_url('fe/article/getArticleDetail/'.$title_url_clean)?>" class="article-link">
                             <div class="article-img-container">
                                 <img class="img-responsive" src="<?=base_url();?>img/article/<?=$row['articleID']?>/<?=$row['articleImgLink']?>"/>
                             </div>

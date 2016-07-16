@@ -58,7 +58,7 @@
                 <div class="col-md-12 col-lg-12">
                     <h4>In <a href="<?=site_url('fe/article/articleCategory/'.$data_article->category)?>"><?=$data_article->category?></a> on
                         <?php $date = date_create($data_article->created);
-                        echo date_format($date, 'M d, Y' );?> by <a href="<?=site_url('fe/article/articleAuthor/'.$data_article->name)?>"><?=$data_article->name?></a></h4>
+                        echo date_format($date, 'M d, Y' );?> by <a href="<?=site_url('fe/article/articleAuthor/'.$data_article->name_url_clean)?>"><?=$data_article->name?></a></h4>
                 </div>
             </div><!--Content Info-->
         </div>
@@ -96,7 +96,7 @@
     <div class="row" id="tag-container">
         <h4 class="right">Tags : </h4>
         <?php foreach($data_tag as $row) { ?>
-            <a href="<?=site_url('fe/article/articleTag/'.$row['tag'])?>">
+            <a href="<?=site_url('fe/article/articleTag/'.$row['tag_url_clean'])?>">
                 <button type="button" class="btn btn-default btn-sm btn-tag float-right"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <?=$row['tag']?></button>
             </a>
         <?php } ?>
@@ -119,15 +119,17 @@
     <div class="row related-article-container">
         <h1>Artikel Terkait</h1>
         <?php 
-        foreach($related_article as $row) { 
+        foreach($related_article as $row) {
+            $id_or_title = str_replace("\"","(-)",$row['title_url_clean']);
+            $title_url_clean = $id_or_title;
         ?>
             <div class="related-article-item">
                 <div class="article-img-wrapper">
-                    <a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['title_url_clean']);?>">
+                    <a href="<?php echo site_url('fe/article/getArticleDetail/'.$title_url_clean);?>">
                         <img class="img-responsive" src="<?php echo base_url(); ?>img/article/<?=$row['articleID']?>/<?=$row['articleImgLink']?>" width="200" />
                     </a>
                 </div>
-                <h4><a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['title_url_clean']);?>"><?=$row['title']?></a></h4>
+                <h4><a href="<?php echo site_url('fe/article/getArticleDetail/'.$title_url_clean);?>"><?=$row['title']?></a></h4>
             </div>
         <?php } ?>
     </div><!--Related Article-->

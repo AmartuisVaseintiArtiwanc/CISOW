@@ -210,6 +210,8 @@ class Article extends CI_Controller{
 
         $more_article = $this->Article_model->getMoreArticle($articleTemp);
 
+        $data['title_tag'] = "Artikel Terbaru";
+
         $data['articles']= $latest_post_page;
 
         $data['dataCategory'] = $category;
@@ -257,6 +259,8 @@ class Article extends CI_Controller{
         $more_article = $this->Article_model->getMoreArticle($articleTemp);
 
 
+
+        $data['title_tag'] = "Artikel Populer";
 
         $data['articles']= $popular_page;
 
@@ -332,6 +336,8 @@ class Article extends CI_Controller{
 
 
 
+        $data['title_tag'] = "Kategori Artikel | ".$category_name;
+
         $data['articles']= $category_post_page;
 
         $data['moreArticles']=$more_article;
@@ -393,6 +399,8 @@ class Article extends CI_Controller{
 
 
 
+        $data['title_tag'] = "Cari Artikel | ".$search_name;
+
         $config['base_url']= site_url('fe/Article/articleListSearch/'.$search_name);
 
         $config['total_rows'] = $count_category_post;
@@ -406,6 +414,10 @@ class Article extends CI_Controller{
         $this->pagination->initialize($config);
 
         $data['pages'] = $this->pagination->create_links();
+
+        echo "<br><br><br><br><br><br><br>";
+        echo " ini : ";
+        var_dump($category_post_page);
 
 
 
@@ -476,6 +488,8 @@ class Article extends CI_Controller{
         $limit = $num_per_page;
 
 
+        
+        $tag_name = str_replace("-"," ",$tag_name);
 
         $tag_post_page = $this -> Article_model->getTagPostPage($start, $limit,$tag_name);
 
@@ -519,6 +533,8 @@ class Article extends CI_Controller{
 
 
 
+        $data['title_tag'] = "Tag Artikel | ".$tag_name;
+
         $data['articles']= $tag_post_page;
 
         $data['moreArticles']=$more_article;
@@ -557,7 +573,7 @@ class Article extends CI_Controller{
 
         $limit = $num_per_page;
 
-
+        $author_name = str_replace("-"," ",$author_name);
 
         $author_post_page = $this -> Article_model->getAuthorPostPage($start, $limit,$author_name);
 
@@ -600,6 +616,7 @@ class Article extends CI_Controller{
         $more_article = $this->Article_model->getMoreArticle($articleTemp);
 
 
+        $data['title_tag'] = "Pembuat Artikel | ".$author_name;
 
         $data['articles']= $author_post_page;
 
@@ -641,11 +658,18 @@ class Article extends CI_Controller{
         $limit = $num_per_page;
 
         if(is_numeric($id_or_title)) {
+            //echo "<br><br><br><br><br><br><br><br>hahah: ";
             $article =  $this->Article_model->getArticleDetailbyId($id_or_title);
+            //echo " <br> : ".$article->title." <br>";
+            //$this->getArticleDetail($article->title);
+            //exit();
         } else {
+            $id_or_title = $this->security->xss_clean($id_or_title);
+            $id_or_title = str_replace("(-)",'"',$id_or_title);
             $id_or_title = str_replace("-"," ",$id_or_title);
             $article =  $this->Article_model->getArticleDetailbyTitle($id_or_title);
         }
+
 
         // GET ID ARTICLE
         $id = $article->articleID;
@@ -689,6 +713,7 @@ class Article extends CI_Controller{
         $more_article = $this->Article_model->getMoreArticle($articleTemp);
 
 
+        $data['title_tag'] = "Artikel | ".$article->title_url_clean;
 
         $data['data_article'] = $article;
 
