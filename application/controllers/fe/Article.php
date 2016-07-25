@@ -415,11 +415,6 @@ class Article extends CI_Controller{
 
         $data['pages'] = $this->pagination->create_links();
 
-        echo "<br><br><br><br><br><br><br>";
-        echo " ini : ";
-        var_dump($category_post_page);
-
-
 
         // Data Master Category
 

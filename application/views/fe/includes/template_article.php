@@ -101,11 +101,10 @@
                 <?php 
 
                 foreach($moreArticles as $row) {
-                    $id_or_title = str_replace("\"","(-)",$row['title_url_clean']);
-                    $title_url_clean = $id_or_title;
+                    $title_url_clean = preg_replace('/[^A-Za-z0-9\-]/', '', $row['title_url_clean']);
                 ?>
                     <div class="more-article-item">
-                        <a href="<?=site_url('fe/article/getArticleDetail/'.$title_url_clean)?>" class="article-link">
+                        <a href="<?=site_url('fe/article/getArticleDetail/'.$row['articleID'].'/'.$title_url_clean)?>" class="article-link">
                             <div class="article-img-container">
                                 <img class="img-responsive" src="<?=base_url();?>img/article/<?=$row['articleID']?>/<?=$row['articleImgLink']?>"/>
                             </div>

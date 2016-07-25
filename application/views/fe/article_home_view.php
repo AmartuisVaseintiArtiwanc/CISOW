@@ -51,8 +51,7 @@
     <?php
 
     foreach($latest_post_data as $row){
-        $id_or_title = str_replace("\"","(-)",$row['title_url_clean']);
-        $title_url_clean = $id_or_title;
+        $title_url_clean = preg_replace('/[^A-Za-z0-9\-]/', '', $row['title_url_clean']);
     ?>
 
     <div class="col-xs-12 col-sm-6 col-lg-3 lastest-post-container">
@@ -61,7 +60,7 @@
 
         <div class="title-post main-title-post"><?= $row['category'] ?></div>
 
-        <a href="<?=site_url("fe/article/getArticleDetail/".$title_url_clean)?>"><h4><?= $row['title'] ?></h4></a>
+        <a href="<?=site_url("fe/article/getArticleDetail/".$row['articleID'].'/'.$title_url_clean)?>"><h4><?= $row['title'] ?></h4></a>
 
         <?= $row['created']?> 
 
@@ -132,13 +131,12 @@ if(count($data['listArticle']) == 0){
         <?php $i=0; 
 
         foreach($data['listArticle'] as $article){ 
-            $id_or_title = str_replace("\"","(-)",$row['title_url_clean']);
-            $title_url_clean = $id_or_title;
+            $title_url_clean = preg_replace('/[^A-Za-z0-9\-]/', '', $row['title_url_clean']);
         ?>
 
             <?php if($i==0) { ?>
 
-                <a href="<?=site_url('fe/article/getArticleDetail/'.$title_url_clean)?>">
+                <a href="<?=site_url('fe/article/getArticleDetail/'.$row['articleID'].'/'.$title_url_clean)?>">
 
                     <div class="col-sm-6 col-custom container-img ">
 
@@ -158,7 +156,7 @@ if(count($data['listArticle']) == 0){
 
             <?php }else{ ?>
 
-                 <a href="<?=site_url('fe/article/getArticleDetail/'.$title_url_clean)?>">
+                 <a href="<?=site_url('fe/article/getArticleDetail/'.$row['articleID'].'/'.$title_url_clean)?>">
 
                      <div class="col-sm-6 col-custom col-side-item ">
 

@@ -73,14 +73,14 @@
     <?php
 
     foreach($articles as $row){
-
+        $title_url_clean = preg_replace('/[^A-Za-z0-9\-]/', '', $row['title_url_clean']);
         ?>
 
         <li>
 
-            <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title_url_clean'])?>">
+            <a href="<?=site_url('fe/article/getArticleDetail/'.$row['articleID'].'/'.$title_url_clean)?>">
 
-            <h3 class="article-title"> <a href="<?=site_url('fe/article/getArticleDetail/'.$row['title_url_clean'])?>"> <?=$row['title']?> </a> </h3>
+            <h3 class="article-title"> <a href="<?=site_url('fe/article/getArticleDetail/'.$row['articleID'].'/'.$title_url_clean)?>"> <?=$row['title']?> </a> </h3>
 
             <div class="article-img-container">
 

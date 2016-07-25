@@ -120,16 +120,15 @@
         <h1>Artikel Terkait</h1>
         <?php 
         foreach($related_article as $row) {
-            $id_or_title = str_replace("\"","(-)",$row['title_url_clean']);
-            $title_url_clean = $id_or_title;
+            $title_url_clean = preg_replace('/[^A-Za-z0-9\-]/', '', $row['title_url_clean']);
         ?>
             <div class="related-article-item">
                 <div class="article-img-wrapper">
-                    <a href="<?php echo site_url('fe/article/getArticleDetail/'.$title_url_clean);?>">
+                    <a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['articleID'].'/'.$title_url_clean);?>">
                         <img class="img-responsive" src="<?php echo base_url(); ?>img/article/<?=$row['articleID']?>/<?=$row['articleImgLink']?>" width="200" />
                     </a>
                 </div>
-                <h4><a href="<?php echo site_url('fe/article/getArticleDetail/'.$title_url_clean);?>"><?=$row['title']?></a></h4>
+                <h4><a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['articleID'].'/'.$title_url_clean);?>"><?=$row['title']?></a></h4>
             </div>
         <?php } ?>
     </div><!--Related Article-->

@@ -93,13 +93,12 @@
         <?php
 
         foreach($articles as $row){
-            $id_or_title = str_replace("\"","(-)",$row['title_url_clean']);
-            $title_url_clean = $id_or_title;
+            $title_url_clean = preg_replace('/[^A-Za-z0-9\-]/', '', $row['title_url_clean']);
         ?>
 
         <div class="col-xs-12 article-col">
 
-            <a href="<?php echo site_url('fe/article/getArticleDetail/'.$title_url_clean)?>" class="article-link">
+            <a href="<?php echo site_url('fe/article/getArticleDetail/'.$row['articleID'].'/'.$title_url_clean)?>" class="article-link">
 
                 <div class="article-img-container">
 
@@ -113,7 +112,7 @@
 
                 </div>
 
-                <h3 class="article-title"> <a href="<?=site_url('fe/article/getArticleDetail/'.$title_url_clean)?>" class="article-link"> <?=$row['title']?> </a> </h3>
+                <h3 class="article-title"> <a href="<?=site_url('fe/article/getArticleDetail/'.$row['articleID'].'/'.$title_url_clean)?>" class="article-link"> <?=$row['title']?> </a> </h3>
 
                 <h5 class="article-date">
 
@@ -129,7 +128,7 @@
 
                 <p><?=$row['description']?></p>
 
-                <a href="<?=site_url('fe/article/getArticleDetail/'.$title_url_clean)?>"><span class="see-more">See More</span></a>
+                <a href="<?=site_url('fe/article/getArticleDetail/'.$row['articleID'].'/'.$title_url_clean)?>"><span class="see-more">See More</span></a>
 
                 <hr>
 
