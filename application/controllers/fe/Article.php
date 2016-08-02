@@ -641,7 +641,7 @@ class Article extends CI_Controller{
 
      * */
 
-    function getArticleDetail($id_or_title)
+    function getArticleDetail($id, $title="")
 
     {
 
@@ -652,17 +652,26 @@ class Article extends CI_Controller{
 
         $limit = $num_per_page;
 
-        if(is_numeric($id_or_title)) {
-            //echo "<br><br><br><br><br><br><br><br>hahah: ";
-            $article =  $this->Article_model->getArticleDetailbyId($id_or_title);
+
+        /*if(is_numeric($id)) {
+            //echo "<br><br><br><br><br><br><br><br>hahah: ";*/
+            $article =  $this->Article_model->getArticleDetailbyId($id);
             //echo " <br> : ".$article->title." <br>";
             //$this->getArticleDetail($article->title);
             //exit();
-        } else {
-            $id_or_title = $this->security->xss_clean($id_or_title);
-            $id_or_title = str_replace("(-)",'"',$id_or_title);
-            $id_or_title = str_replace("-"," ",$id_or_title);
-            $article =  $this->Article_model->getArticleDetailbyTitle($id_or_title);
+        /*} else {
+            $id = $this->security->xss_clean($id);
+            $id = str_replace("(-)",'"',$id);
+            $id = str_replace("-"," ",$id);
+            $article =  $this->Article_model->getArticleDetailbyTitle($id);
+        }*/
+
+        if($title == null || $title == ""){
+            $title = preg_replace('/[^A-Za-z0-9\-]/', '-', $article->title);
+            //redirect('site_url("article/getArticleDetail")+"$id"+"/"+$title','refresh');
+            header("Location: "+site_url("article/getArticleDetail")."/"."$id"."/".$title);
+            redirect(site_url("fe/article/getArticleDetail")."/"."$id"."/".$title,'refresh');
+            //header("Location: "+site_url("article/getArticleDetail")+"$id"+"/"+$title);
         }
 
 
@@ -708,7 +717,7 @@ class Article extends CI_Controller{
         $more_article = $this->Article_model->getMoreArticle($articleTemp);
 
 
-        $data['title_tag'] = "Artikel | ".$article->title_url_clean;
+        $data['title_tag'] = $article->title_url_clean;
 
         $data['data_article'] = $article;
 
