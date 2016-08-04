@@ -1,0 +1,48 @@
+
+
+.navbar-nav{
+    float: right;
+    padding-top: 5px;
+}
+.navbar-nav>li>a{
+    color: #FFF!important;
+}
+.navbar-nav>li>a:hover{
+    color: #ffcb1f!important;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    color: #ffcb1f!important;
+    background: transparent;
+}
+.navbar-brand{
+    padding: 8px;
+}
+nav.header-nav{
+    position: absolute;
+    width: 100%;
+    right: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 108px;
+    height: auto;
+    background: transparent;
+    color: #fff;
+    z-index: 99;
+    /*override style bootstrap*/
+    border-color:transparent;
+    border-radius: 0;
+// set animation
+-webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+nav.sticky {
+    position: fixed;
+    font-size: 16px;
+    line-height: 48px;
+    height: 60px;
+    width: 100%;
+    background: #191919;
+    text-align: left;
+}
