@@ -123,6 +123,9 @@
     padding: 10px;
     margin-bottom: 5px;
 }
+div.article-category-item a{
+    color: #000;
+}
 div.article-category-item .item-box{
     border: 1px solid rgba(0, 0, 0, 0.5);
     width: 100%;
