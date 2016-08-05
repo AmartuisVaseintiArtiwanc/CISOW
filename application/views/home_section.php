@@ -9,11 +9,8 @@
         <div id="tag-line-two-container">
             <h1>Hey, we are here to help you solve your IT problems,</h1>
         </div>
-        <div id="btn-meet-us-home">
-            <!-- <h3>MEET US</h3> -->
-            <button class="button" type="button" data-hover="MEET US">
-                <span>MEET US</span>
-            </button>
+        <div id="btn-meet-us-home" class="hvr-outline-in">
+            <h3>MEET US</h3>
         </div>
     </div>
 </section>

@@ -1,6 +1,27 @@
 .clear{
     clear: both;
 }
+/* CUSTOM HOVER*/
+.hvr-outline-in{
+    display: block;
+}
+.hvr-outline-in:before {
+    border: #ffcb1f solid 4px;
+}
+.hvr-shutter-out-vertical{
+    display: block;
+}
+.hvr-shutter-out-vertical:before {
+    background:#ffcb1f;
+}
+.hvr-trim{
+    display: block;
+}
+.hvr-trim:before{
+    border: rgba(0,0,0,1) solid 4px;
+}
+
+/*HOME SECTION*/
 #home-section {
     padding-top:50px;
     position: relative;
@@ -15,7 +36,6 @@
     background-size: cover;
     background-color: #1E88E5;
 }
-
 /*Home Logo*/
 #home-section-logo-container{
     position: relative;
@@ -45,7 +65,7 @@
 }
 #btn-meet-us-home{
     width: 18vw;
-    /*padding: 1vw;*/
+    padding: 1vw;
     margin: auto;
     margin-top: 4vh;
     cursor: pointer;
@@ -128,10 +148,6 @@ div.article-category-item .item-box:hover{
     font-weight: 500!important;
 }
 
-
-
-
-
 /*WRAP1 SECTION*/
 #wrap1-section {
 
@@ -153,15 +169,6 @@ div.article-category-item .item-box:hover{
     #wrap1-section .container {
         padding-top:200px;
     }
-
-
-
-
-
-
-
-
-
 
 /*SERVICE SECTION*/
 #service-section {
@@ -216,10 +223,9 @@ div.article-category-item .item-box:hover{
     text-align: center;
     font-size: 1.2vw!important;
     font-weight: 500!important;
-    color: #FFF;
     margin: 0 auto;
 }
-.service-item-btn.active>h1{
+.service-item-btn.active,.service-item-btn:hover{
     color: #000;
 }
 .service-item-img{
@@ -234,11 +240,13 @@ div.article-category-item .item-box:hover{
     margin: 0 auto;
     position: relative;
     width: 60vw;
+    height: 32vh;
+    /*height: 230px;*/
     border-top: solid 2px #ffcb1f;
     border-bottom: solid 2px #ffcb1f;
 }
 .service-desc-item{
-    position: relative;
+    position: absolute;
     padding: 2vw;
     margin-bottom: 4vh;
     display: none;
@@ -267,16 +275,6 @@ div.article-category-item .item-box:hover{
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
 /*WRAP2 SECTION*/
 #wrap2-section {
 
@@ -298,16 +296,6 @@ div.article-category-item .item-box:hover{
     #wrap2-section .container {
         padding-top:200px;
     }
-
-
-
-
-
-
-
-
-
-
 
 /*HOW We Work SeCTION*/
 #how-we-work-section {
@@ -386,24 +374,6 @@ div.article-category-item .item-box:hover{
         left: 52%;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*WRAP3 SECTION*/
 #wrap3-section {
 
@@ -425,21 +395,6 @@ div.article-category-item .item-box:hover{
     #wrap3-section .container {
         padding-top:200px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*OUR TEAM*/
 #our-team-section {

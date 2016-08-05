@@ -65,6 +65,10 @@ class Parallax extends CI_Controller
 
 	}
 
+    function test(){
+        $this->load->view('fe/parallax_view');
+    }
+
 
 
 	function Send_email_contactus(){

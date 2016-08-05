@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/plugin/hover_css/hover-min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/custom/animate_header.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/custom/main.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/custom/appointment_form.css">
 
     <style>
         body {
@@ -26,7 +27,7 @@
             <a class="navbar-brand" href="#"><img src="<?php echo base_url();?>assets/image/logo/Logo_150_H_ppi.png" class="img-responsive" width="125"/></a>
         </div>
         <div>
-            <div class="collapse navbar-collapse" id="myNavbar">
+            <div class="collapse navbar-collapse" id="home-navbar">
                 <ul class="nav navbar-nav">
                     <li><a href="#home-section">HOME</a></li>
                     <li><a href="#article-section">ARTICLE</a></li>
@@ -76,6 +77,11 @@
 
 <?php $this->load->view('team_section');?>
 <?php $this->load->view('contact_us_section');?>
+<!-- Appointment Form -->
+<div id="appointment_form" class="modal fade" tabindex="1" aria-labelledby="modal_appointment_form" aria-hidden="true">
+    <?php $this->load->view('fe/home/appointment_form_view'); ?>
+</div>
+
 
 
 <script src="<?php echo base_url();?>assets/jquery/jquery.min.js"></script>
@@ -96,6 +102,35 @@
             $(this).children(".team-link-container").css("visibility", "visible");
         }, function(){
             $(this).children(".team-link-container").css("visibility", "hidden");
+        });
+
+        //Smoth Scroll
+        $('#home-navbar ul li a').click(function () {
+            var url = $(this).attr('href');
+            $('html,body').animate({
+                scrollTop: $(url).offset().top
+            }, 1000, 'swing');
+            //$('#sidebar-wrapper').animate({width: 0}, {duration: 400});
+            return false;
+        });
+
+        //SERVICE
+        $(".service-item-btn").click(function(){
+            var $service = $(this).attr("data-src");
+            var $service_form = $(this).attr("data-form");
+            //Show hide ICON
+            $(".service-item-img").hide(1000);
+            $($service+"icon").show(1000);
+
+            //Show hide DESC
+            $(".service-desc-item ").fadeOut(500);
+            $($service+"desc").fadeIn(1000);
+
+            $(".service-item-btn").removeClass("active");
+            $(this).addClass("active");
+
+            //Jenis form Checked
+            $($service_form).prop("checked", true);
         });
     });
 </script>

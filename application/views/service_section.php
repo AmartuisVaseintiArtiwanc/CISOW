@@ -5,14 +5,26 @@
 
         <div class="row" id="service-container">
             <div id="service-item-container">
-                <div class="service-item-btn active"><h1>APPLICATION</h1></div>
-                <div class="service-item-btn"><h1>MULTIMEDIA</h1></div>
-                <div class="service-item-btn"><h1>SUPPORT</h1></div>
+                <div class="service-item-btn active hvr-shutter-out-vertical" data-src="#app-" data-form="#services_application">
+                    <h1>APPLICATION</h1>
+                </div>
+                <div class="service-item-btn hvr-shutter-out-vertical" data-src="#mulmed-" data-form="#services_multimedia">
+                    <h1>MULTIMEDIA</h1>
+                </div>
+                <div class="service-item-btn hvr-shutter-out-vertical" data-src="#supp-" data-form="#services_support">
+                    <h1>SUPPORT</h1>
+                </div>
             </div>
             <div id="service-img-container">
-                <div class="service-item-img active"><img src="<?php echo base_url();?>assets/image/services/apps.png" class="img-responsive"></div>
-                <div class="service-item-img"><img src="<?php echo base_url();?>assets/image/services/multimedia.png" class="img-responsive"></div>
-                <div class="service-item-img"><img src="<?php echo base_url();?>assets/image/services/supps.png" class="img-responsive"></div>
+                <div class="service-item-img active" id="app-icon">
+                    <img src="<?php echo base_url();?>assets/image/services/apps.png" class="img-responsive">
+                </div>
+                <div class="service-item-img" id="mulmed-icon">
+                    <img src="<?php echo base_url();?>assets/image/services/multimedia.png" class="img-responsive">
+                </div>
+                <div class="service-item-img" id="supp-icon">
+                    <img src="<?php echo base_url();?>assets/image/services/supps.png" class="img-responsive">
+                </div>
             </div>
             <div class="clear"></div>
         </div>
@@ -34,7 +46,7 @@
                         agar produk yang anda terima adalah produk dengan kualitas terbaik dan berlisensi resmi.</p>
                 </div>
 
-                <div id="continue-form-btn">
+                <div id="continue-form-btn" class="hvr-trim" data-toggle="modal"  href="#appointment_form" >
                     <h6>CONTINUE TO FORM</h6>
                 </div>
             </div>
