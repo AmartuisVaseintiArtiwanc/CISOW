@@ -31,68 +31,37 @@ class Parallax extends CI_Controller
 	}
 
 	function index()
-
 	{
 
 		/*demi article*/
 
-
-
-
-
+        /*
 		$category = $this->Article_category_model->getArticleCategory();
-
 		$data['category'] = $category;
-
-
-
-		$latest_post_data= $this -> Article_model->getLatestPost();
-
+        $latest_post_data= $this -> Article_model->getLatestPost();
         $data['latest_post_data'] = $latest_post_data;
-
-
-
         $category = $this ->Article_category_model->getArticleCategory();
-
-
-
         $article_per_category = array();
-
-
-
+        */
 //        foreach($category as $row){
-
 //            $category_id =$row['categoryID'];
-
 //            $article_list = $this->Article_model->getArticleByCategory($category_id);
-
 //
-
 //            $data_article = array(
-
 //                "categoryID"=>$row['categoryID'],
-
 //                "categoryName"=>$row['category'],
-
 //                "listArticle"=>$article_list
-
 //            );
-
 //
-
 //            array_push($article_per_category,$data_article);
-
 //        }
 
+        /*
         $data['article_data'] = $article_per_category;
-
         $data['category_data'] = $category;
-
+        */
         /*demi article ends*/
-
-
-
-		$this->load->view('fe/parallax_view', $data);
+		$this->load->view('index');
 
 	}
 
