@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='shortcut icon' href='<?php echo base_url();?>assets/image/favicon-32x32.ico' type='image/x-icon'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,500,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/custom/preloading.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/plugin/hover_css/hover-min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/custom/animate_header.css">
@@ -20,6 +21,17 @@
     </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!--PRELOADING -->
+<div id="loader-wrapper">
+    <div id="loader" class="animated infinite flip">
+        <img src="<?php echo base_url();?>assets/image/logo/Logo_300_V_ppi.png" class="img-responsive"/>
+    </div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
 
 <nav class="navbar navbar-inverse header-nav">
     <div class="container">
@@ -88,6 +100,7 @@
 
 <script src="<?php echo base_url();?>assets/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugin/wow_js/wow.min.js"></script>
 <!-- write script to toggle class on scroll -->
 <script>
     $(window).scroll(function() {
@@ -100,6 +113,37 @@
     });
 
     $(document).ready(function(){
+
+        new WOW().init();
+
+        //remove scroll bar
+        $('html, body').css({ 'overflow': 'hidden', 'height': '100%' });
+        $("#home-section-logo-container img").hide();
+
+        $(window).load(function(){
+            setTimeout(function(){
+                $("#loader").removeClass("animated infinite flip");
+                setTimeout(function() {
+                    $("#loader").addClass("animated zoomOutUp");
+                    $('html, body').removeAttr('style');
+                    $('body').addClass('loaded');
+                    animationHome();
+                },300);
+            }, 2000);
+        });
+
+        function animationHome(){
+
+            setTimeout(function() {
+                $("#home-section-logo-container img").addClass("animated zoomIn").show();
+                $("#tag-line-container").delay(400).addClass("flipInX");
+                $("#tag-line-two-container").delay(800).addClass("flipInX");
+                $("#btn-meet-us-home").delay(1200).addClass("flipInX");
+
+            },400);
+        }
+
+
         $(".our-team-item").hover(function(){
             $(this).children(".team-link-container").css("visibility", "visible");
         }, function(){
@@ -142,8 +186,6 @@
 <!-- START SCRIPT CONTACT US -->
 <script>
     $(function() {
-
-
         // validation form appointment
         key_ajax_contactEmail = false;
         key_ajax_contactSubject = false;
@@ -177,7 +219,6 @@
             $('#contact-us-form-email-group').append('<div id = "show_error_email_address" class="help-block">' + 'Please Input Your Email Address' + '</div>');
           }
         });
-
 
         // SUBJECT
         $('#contact-us-form-subject').on('input', function() {
@@ -225,10 +266,6 @@
           }
         });
 
-
-
-
-
         var div_loading = $("<div>", {id: "fountainG"});
         var div_loading_item1 = $("<div>", {id: "fountainG_1", class: "fountainG"});
         var div_loading_item2 = $("<div>", {id: "fountainG_2", class: "fountainG"});
@@ -239,9 +276,6 @@
         var div_loading_item7 = $("<div>", {id: "fountainG_7", class: "fountainG"});
         var div_loading_item8 = $("<div>", {id: "fountainG_8", class: "fountainG"});
         div_loading.append(div_loading_item1,div_loading_item2,div_loading_item3,div_loading_item4,div_loading_item5,div_loading_item6,div_loading_item7,div_loading_item8);
-
-
-
 
         // Get the form.
         var form = $('#contact-us-form-isi');
@@ -255,23 +289,6 @@
             var contactEmail    = $("#contact-us-form-email").val().trim();
             var contactSubject  = $("#contact-us-form-subject").val().trim();
             var contactMessage  = $("#contact-us-form-message").val().trim();
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
 
             //*
             if (key_ajax_contactEmail == true && key_ajax_contactSubject == true && key_ajax_contactMessage == true) {
