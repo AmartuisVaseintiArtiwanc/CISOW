@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,500,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo base_url();?>assets/custom/preloading.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/plugin/datepicker/bootstrap-datepicker.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/plugin/hover_css/hover-min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/custom/animate_header.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/custom/main.css">
@@ -100,7 +101,9 @@
 
 <script src="<?php echo base_url();?>assets/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugin/datepicker/bootstrap-datepicker.js"></script>
 <script src="<?php echo base_url();?>assets/plugin/wow_js/wow.min.js"></script>
+<script src="<?php echo base_url();?>assets/custom/appointment_form_validation.js"></script>
 <!-- write script to toggle class on scroll -->
 <script>
     $(window).scroll(function() {

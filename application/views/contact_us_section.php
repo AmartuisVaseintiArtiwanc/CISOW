@@ -30,7 +30,7 @@
 		#contact-us-section #contact-us-form {
 			padding-left: 20px;
 			padding-right: 20px;
-			font-size: 28px;
+			font-size: 18px;
 		}
 			#contact-us-section #contact-us-form #button-submit {
 				width: 18vw;
