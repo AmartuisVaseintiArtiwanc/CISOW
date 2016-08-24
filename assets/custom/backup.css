@@ -21,26 +21,21 @@
     border: rgba(0,0,0,1) solid 4px;
 }
 
-
-.parallax{
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
 /*HOME SECTION*/
 #home-section {
     padding-top:50px;
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     color: #fff;
-    background-image: url("../image/background/home_bg.png");
+    background: url("../image/background/home_bg.png") no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #1E88E5;
 }
-
 /*Home Logo*/
 #home-section-logo-container{
     position: relative;
@@ -61,7 +56,7 @@
 }
 #tag-line-two-container{
     position: relative;
-    margin-top: 13vh;
+    margin-top: 20vh;
 }
 #tag-line-two-container>h1{
     font-weight: 300;
@@ -93,12 +88,6 @@
     min-height: 100vh;
     color: #000000;
     background-color: #FFF;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
 }
 #article-section h1{
     font-size: 3vw;
@@ -170,7 +159,13 @@ div.article-category-item .item-box:hover{
     width: 100%;
     min-height: 100vh;
     color: #fff;
-    background-image: url("../image/background/servie_bg.png");
+    background: url("../image/background/servie_bg.png") no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #FFF;
 }
 #service-section h1{
     font-size: 3vw;
@@ -346,7 +341,13 @@ div.article-category-item .item-box:hover{
     width: 100%;
     min-height: 100vh;
     color: #fff;
-    background-image: url("../image/background/team_bg.png");
+    background: url("../image/background/team_bg.png") no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #FFF;
 }
 #our-team-section h1{
     font-size: 3vw;
@@ -411,9 +412,15 @@ div.article-category-item .item-box:hover{
     padding-bottom: 30px;
     position: relative;
     width: 100%;
-    min-height: 90vh;
+    min-height: 100vh;
     color: #fff;
-    background-image: url("../image/background/contanct_us_bg.png");
+    background: url("../image/background/contanct_us_bg.png") no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #FFF;
 }
 
 /*WRAP1 SECTION*/
@@ -435,8 +442,22 @@ div.article-category-item .item-box:hover{
     font-size: 20px;
 }
 #wrap1-section {
-
-
+    /*
+    padding-top:70px;
+    padding-bottom: 30px;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    color: #FFF;
+    background: url("../image/background/wrap1_bg.jpg") no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #FFF;
+    */
 }
 #wrap1-section .container {
 }

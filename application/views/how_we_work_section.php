@@ -1,4 +1,4 @@
-<section id="how-we-work-section">
+<section id="how-we-work-section" class="parallax">
     <div class="container container-fluid">
         <h1>HOW WE WORK</h1>
         <p>we know waiting is no fun, <br> therefore we will give you the fastest and easiest way for you.</p>

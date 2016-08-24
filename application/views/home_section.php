@@ -1,4 +1,4 @@
-<section id="home-section">
+<section id="home-section" class="parallax">
     <div class="container container-fluid">
         <div id="home-section-logo-container">
             <img src="<?php echo base_url();?>assets/image/logo/Logo_300_V_ppi.png" class="img-responsive"/>

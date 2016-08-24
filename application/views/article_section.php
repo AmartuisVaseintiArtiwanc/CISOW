@@ -1,7 +1,7 @@
-<section id="article-section">
+<section id="article-section" class="parallax">
     <div class="container container-fluid">
         <h1>ARTICLE</h1>
-        <p>Stay updated with our news and articles</p>
+        <p  data-wow-delay="1s" class=" wow flipInX">Stay updated with our news and articles</p>
 
         <div id="article-shortcut-container">
             <div class="btn-group btn-group-justified" role="group" id="article-shortcut-wrapper">
@@ -11,7 +11,7 @@
         </div>
 
         <div id="article-category-container" class="row">
-            <div class="article-category-item col-md-4">
+            <div class="article-category-item col-md-4 wow bounceInUp " data-wow-delay="0.5s">
                 <a href = "<?=site_url('fe/article/articleCategory/Lifestyle')?>" target="_blank">
                     <div class="item-box hvr-glow">
                         <h1 class="article-title" align="center">LIFESTYLE</h1>
@@ -20,7 +20,7 @@
                     </div>
                 </a>
             </div>
-            <div class="article-category-item col-md-4">
+            <div class="article-category-item col-md-4 wow bounceInUp " data-wow-delay="0.8s">
                 <a href = "<?=site_url('fe/article/articleCategory/Tutorial')?>" target="_blank">
                     <div class="item-box hvr-glow">
                         <h1 class="article-title" align="center">TUTORIAL</h1>
@@ -29,7 +29,7 @@
                     </div>
                 </a>
             </div>
-            <div class="article-category-item col-md-4">
+            <div class="article-category-item col-md-4 wow bounceInUp " data-wow-delay="1.2s">
                 <a href = "<?=site_url('fe/article/articleCategory/Technology')?>" target="_blank">
                     <div class="item-box hvr-glow">
                         <h1 class="article-title" align="center">TECHNOLOGY</h1>

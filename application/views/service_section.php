@@ -1,22 +1,26 @@
-<section id="service-section">
+<section id="service-section" class="parallax">
     <div class="container container-fluid">
         <h1>OUR SERVICES</h1>
-        <p>Let us know your problem by choosing one of our services,<br/>we will glad to work with you</p>
+        <p  data-wow-delay="1s" class=" wow flipInX">Let us know your problem by choosing one of our services,<br/>we will glad to work with you</p>
 
         <div class="row" id="service-container">
             <div id="service-item-container">
-                <div class="service-item-btn active hvr-shutter-out-vertical" data-src="#app-" data-form="#services_application">
+                <div class="service-item-btn active hvr-shutter-out-vertical wow flipInX"
+                     data-wow-delay="0.5s" data-src="#app-" data-form="#services_application">
                     <h1>APPLICATION</h1>
                 </div>
-                <div class="service-item-btn hvr-shutter-out-vertical" data-src="#mulmed-" data-form="#services_multimedia">
+                <div class="service-item-btn hvr-shutter-out-vertical wow flipInX"
+                     data-wow-delay="0.8s"
+                     data-src="#mulmed-" data-form="#services_multimedia">
                     <h1>MULTIMEDIA</h1>
                 </div>
-                <div class="service-item-btn hvr-shutter-out-vertical" data-src="#supp-" data-form="#services_support">
+                <div class="service-item-btn hvr-shutter-out-vertical wow flipInX"
+                     data-wow-delay="1.2s" data-src="#supp-" data-form="#services_support">
                     <h1>SUPPORT</h1>
                 </div>
             </div>
             <div id="service-img-container">
-                <div class="service-item-img active" id="app-icon">
+                <div class="service-item-img active wow bounceInUp " id="app-icon" data-wow-delay="1s">
                     <img src="<?php echo base_url();?>assets/image/services/apps.png" class="img-responsive">
                 </div>
                 <div class="service-item-img" id="mulmed-icon">
@@ -31,7 +35,7 @@
 
         <div class="">
             <div id="service-desc-container">
-                <div class="service-desc-item active" id="app-desc">
+                <div class="service-desc-item active wow flipInX" id="app-desc" data-wow-delay="1s">
                     <p>Kami melengkapi Bisnis/Usaha Anda dengan serangkaian solusi sistem terintegrasi yang handal untuk pengembangan
                         bisnis Anda kedepan melalui teknologi terbaru dalam pengembangan Sistem Informasi, Aplikasi, Corporate Website
                         & System, Security System, e-commerce, dan SEO service kami berkomitmen untuk memberikan Anda pelayanan yang terbaik!</p>
@@ -46,7 +50,7 @@
                         agar produk yang anda terima adalah produk dengan kualitas terbaik dan berlisensi resmi.</p>
                 </div>
 
-                <div id="continue-form-btn" class="hvr-trim" data-toggle="modal"  href="#appointment_form" >
+                <div id="continue-form-btn" class="hvr-trim wow flipInX" data-toggle="modal" data-wow-delay="1s"  href="#appointment_form" >
                     <h6>CONTINUE TO FORM</h6>
                 </div>
             </div>

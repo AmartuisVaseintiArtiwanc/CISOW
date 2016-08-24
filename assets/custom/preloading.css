@@ -34,7 +34,7 @@ h1 {
     color: #EEEEEE;
 }
 
-#loader-wrapper {
+#preloader-wrapper{
     position: fixed;
     top: 0;
     left: 0;
@@ -42,7 +42,7 @@ h1 {
     height: 100%;
     z-index: 1000;
 }
-#loader {
+#preloader{
     display: block;
     position: relative;
     left: 50%;
@@ -50,8 +50,6 @@ h1 {
     width: 150px;
     height: 150px;
     margin: -75px 0 0 -75px;
-
-
     z-index: 1001;
 }
 
@@ -82,7 +80,7 @@ h1 {
     }
 }
 
-#loader-wrapper .loader-section {
+#preloader-wrapper .preloader-section {
     position: fixed;
     top: 0;
     width: 51%;
@@ -94,16 +92,16 @@ h1 {
     transform: translateX(0);  /* Firefox 16+, IE 10+, Opera */
 }
 
-#loader-wrapper .loader-section.section-left {
+#preloader-wrapper .preloader-section.section-left {
     left: 0;
 }
 
-#loader-wrapper .loader-section.section-right {
+#preloader-wrapper .preloader-section.section-right {
     right: 0;
 }
 
 /* Loaded */
-.loaded #loader-wrapper .loader-section.section-left {
+.loaded #preloader-wrapper .preloader-section.section-left {
     -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
     -ms-transform: translateX(-100%);  /* IE 9 */
     transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
@@ -112,7 +110,7 @@ h1 {
     transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
-.loaded #loader-wrapper .loader-section.section-right {
+.loaded #preloader-wrapper .preloader-section.section-right {
     -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
     -ms-transform: translateX(100%);  /* IE 9 */
     transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
@@ -121,12 +119,12 @@ h1 {
     transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
-.loaded #loader {
+.loaded #preloader {
     opacity: 0;
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
-.loaded #loader-wrapper {
+.loaded #preloader-wrapper {
     visibility: hidden;
 
     -webkit-transform: translateY(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
@@ -138,7 +136,7 @@ h1 {
 }
 
 /* JavaScript Turned Off */
-.no-js #loader-wrapper {
+.no-js #preloader-wrapper {
     display: none;
 }
 .no-js h1 {
