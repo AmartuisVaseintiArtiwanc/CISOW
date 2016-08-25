@@ -108,6 +108,7 @@
 
 <script src="<?php echo base_url();?>assets/plugin/datepicker/bootstrap-datepicker.js"></script>
 <script src="<?php echo base_url();?>assets/custom/appointment_form_validation.js"></script>
+<script src="<?php echo base_url();?>assets/custom/parallax.js"></script>
 <!-- write script to toggle class on scroll -->
 <script>
     $(window).scroll(function() {
