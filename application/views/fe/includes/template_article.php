@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title><?php echo $title_tag;?></title>
-    <link href="<?=base_url()?>img/favicon.ico" rel="shortcut icon">
-    <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?=base_url()?>css/article.css" rel="stylesheet">
-    <link href="<?=base_url()?>css/cyberits.css" rel="stylesheet">
-    <link href="<?=base_url()?>css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>img/favicon.ico" rel="shortcut icon">
+    <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>css/article.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>css/cyberits.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'/>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
-    <script src="<?=base_url()?>js/jquery.min.js"></script>
-    <script src="<?=base_url()?>js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="<?=base_url()?>js/modernizr.custom.js"></script>
+    <script src="<?php echo base_url();?>js/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>js/modernizr.custom.js"></script>
 
     <!-- Social Media -->
     <script src='http://connect.facebook.net/en_US/all.js'></script>
@@ -44,35 +44,27 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<!-- Fixed navbar -->
-<div class="header-container">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="row">
-                <div class="left-navbar col-sm-4">
-                    <div class="logo-container">
-                        <a href="<?=site_url()?>"><img src="<?=base_url()?>img/logo.png"/></a>
-                    </div>
-                </div>
-                <div class="right-navbar col-sm-8">
-                    <form action="<?=site_url('fe/Article/articleListSearch')?>" method="get">
-                        <div class="input-group search-bar">
-                            <input type="text" class="form-control" name="search" placeholder="Search for...">
+<nav class="navbar navbar-inverse header-nav sticky">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="<?php echo base_url();?>"><img src="http://localhost/cisow/assets/image/logo/Logo_150_H_ppi.png" class="img-responsive" width="125"></a>
+        </div>
+        <div class=row">
+            <form action="<?=site_url('fe/Article/articleListSearch')?>" method="get">
+                <div class="input-group search-bar">
+                    <input type="text" class="form-control" name="search" placeholder="Search for...">
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button">
                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                             </button>
                         </span>
-                        </div><!-- /input-group -->
-                    </form>
-                </div><!-- /right-navbar -->
-            </div>
-            <div class="clear"></div>
+                </div>
+            </form>
         </div>
     </div>
-</div>
+</nav>
 
-<div class="container">
+<div class="container" id="content-body">
     <div class="row">
         <div class="content-container col-sm-7" id="content">
             <?php 
@@ -168,6 +160,7 @@
             $("html, body").animate({scrollTop: 0}, 700);
             return false;
         })
+
     });
 </script>
 </body>

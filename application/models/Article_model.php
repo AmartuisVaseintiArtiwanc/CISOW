@@ -1,12 +1,6 @@
 <?php
 
-
-
     class Article_model extends CI_Model{
-
-       
-
-        
 
         function getLatestPost(){
 
@@ -25,12 +19,7 @@
             $query = $this->db->get();
 
             return $query->result_array();
-
-             
-
         }
-
-        
 
         function getArticleByCategory($categoryID){
 
@@ -52,16 +41,9 @@
 
             return $query->result_array();
 
-             
-
         }
 
-        
-
         //William
-
-        
-
         function getLatestPostPage($start, $limit){
 
             $this->db->select('a.categoryID as categoryID, category, articleID, title, 
@@ -92,22 +74,14 @@
             $query = $this->db->get();
 
             return $query->result_array();
-
-            
-
         }
-
-        
 
         function getCountLatestPost(){
 
             $this->db->from('tbl_cyberits_t_articles a');
 
             return $this->db->count_all_results();
-
         }
-
-        
 
         function getArticleByCategoryPage($start, $limit, $categoryName){
 
@@ -142,11 +116,7 @@
 
             return $query->result_array();
 
-            
-
         }
-
-        
 
         function getCountArticleByCategory($categoryName){
 
@@ -157,10 +127,7 @@
             $this->db->where('b.category',$categoryName);
 
             return $this->db->count_all_results();
-
         }
-
-        
 
         function getArticleSearch($start, $limit, $search_name){
 
@@ -195,11 +162,7 @@
 
             return $query->result_array();
 
-            
-
         }
-
-        
 
         function getCountArticleSearch($search_name){
 
@@ -208,10 +171,7 @@
             $this->db->like('a.title',$search_name);
 
             return $this->db->count_all_results();
-
-        }   
-
-             
+        }
 
         /*
 
@@ -244,8 +204,6 @@
 
             $this->db->order_by('a.Created','desc');
 
-            
-
             if($limit != null || $start!= null){
 
                 $this->db->limit($limit,$start);    
@@ -257,8 +215,6 @@
             return $query->result_array();
 
         }
-
-        
 
         function getCountTagPost($tagName){
 
@@ -275,8 +231,6 @@
             return $this->db->count_all_results();
 
         }
-
-
 
         /*
 
@@ -309,8 +263,6 @@
 
             $this->db->order_by('a.Created','desc');
 
-            
-
             if($limit != null || $start!= null){
 
                 $this->db->limit($limit,$start);    
@@ -323,8 +275,6 @@
 
         }
 
-        
-
         function getCountAuthorPost($authorName){
 
             $this->db->from('tbl_cyberits_t_articles a');
@@ -336,10 +286,7 @@
             $this->db->where('b.name', $authorName);
 
             return $this->db->count_all_results();
-
         }
-
-         
 
         /*
 
@@ -363,8 +310,6 @@
 
             $this->db->order_by('a.Created','desc');
 
-
-
             if($limit != null || $start!= null){
 
                 $this->db->limit($limit,$start);
@@ -378,18 +323,13 @@
         }
 
 
-
-        function getCountArticleList()
-
-        {
+        function getCountArticleList(){
 
             $this->db->from('tbl_cyberits_t_articles a');
 
             return $this->db->count_all_results();
 
         }
-
-
 
         function getArticleListBySearch($title, $category, $author,$start, $limit){
 
@@ -402,8 +342,6 @@
             $this->db->join('tbl_cyberits_m_categories b', 'a.categoryID = b.categoryID');
 
             $this->db->join('tbl_cyberits_m_users c', 'a.authorID = c.userID');
-
-
 
             $this->db->like('a.title', $title);
 
@@ -420,7 +358,6 @@
             $this->db->order_by('a.Created','desc');
 
 
-
             if($limit != null || $start!= null){
 
                 $this->db->limit($limit,$start);
@@ -432,8 +369,6 @@
             return $query->result_array();
 
         }
-
-
 
         function countArticleListBySearch($title, $category, $author){
 
@@ -456,10 +391,7 @@
             $this->db->where('a.isActive', 1);
 
             return $this->db->count_all_results();
-
         }
-
-
 
         /*
 
@@ -504,17 +436,11 @@
             return $query->row();
         }
 
-
-
-
         /*
 
          * Related Article
 
          */
-
-
-
         function getRelatedArticleTag($articleId){
 
             $this->db->select('tagID');
@@ -529,11 +455,7 @@
 
         }
 
-
-
         function getRelatedArticle($articleId){
-
-
 
             $this->db->select('tagID');
 
@@ -567,8 +489,6 @@
 
         }
 
-
-
         function getMoreArticle($dataArticle){
 
             $this->db->select('b.userID as userID, a.articleID, title,
@@ -600,8 +520,6 @@
 
         }
 
-
-
         function getPopularArticle($limit){
 
             $this->db->select('b.userID as userID, a.articleID, title,
@@ -631,17 +549,11 @@
 
         }
 
-
-
-
-
         /*
 
          * Article Comment
 
          */
-
-
 
         function getArticleComments($start, $limit, $articleID){
 
@@ -669,8 +581,6 @@
 
         }
 
-
-
         function getCountArticleComments($articleID){
 
             $this->db->from('tbl_cyberits_t_comments a');
@@ -681,11 +591,7 @@
 
         }
 
-
-
-		function insertComment($data)
-
-		{
+		function insertComment($data){
 
 			$this->db->insert('tbl_cyberits_t_comments',$data);
 
@@ -695,8 +601,6 @@
 
 		}
 
-        
-
         function test(){
 
             $query = $this->db->query("SELECT * FROM tbl_cyberits_t_comments");
@@ -705,8 +609,6 @@
 
         }
 
-
-
         function createArticle($data){
 
             $this->db->insert('tbl_cyberits_t_articles',$data);
@@ -714,8 +616,6 @@
             return $this->db->insert_id();
 
         }
-
-
 
         function updateArticle($data, $id){
 
@@ -728,7 +628,6 @@
             return $result;
 
         }
-
 
 
     }

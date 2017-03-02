@@ -1,284 +1,1 @@
-hr{
-    border-top: 1px solid rgba(39, 16, 28, 0.76);
-}
-a{
-    color: rgb(238, 134, 7);
-}
-.list-img-container{
-    margin: auto;
-}
-.header-container{
-    width:100%;
-    height:70px;
-    margin-bottom: 25px;
-}
-.right-navbar{
-    float:right;
-}
-.search-bar{
-    float:right;
-    padding-top: 19px;
-    width: 50%;
-}
-.search-bar input{
-    box-shadow: 0 0 5px #e8e8e8;
-}
-.search-bar input:focus{
-    box-shadow: 0 0 5px rgba(233,175,3, 1);
-    border-color: #e9af03;
-}
-.clear{
-	clear:both;
-}
-.article-body{
-    font-family:Verdana, sans-serif;
-    font-size: 16px;
-    color:#323232;
-    padding: 15px;
-    margin-top:-30px;
-    width: 100%;
-}
-/*Article MENU*/
-.article-nav{
-    border-bottom: 1px solid #f5f5f5;
-    padding-left: 15px;
-    padding-bottom: 25px;
-}
-.article-nav ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.article-nav ul li:hover,#article-nav-right li a:hover{
-    color:#e9af03;
-}
-.article-nav ul li{
-    display: inline-block;
-    font-family: Roboto,sans-serif;
-    text-transform:uppercase ;
-    margin-right: 20px;
-    padding-bottom: 5px;
-    cursor: pointer;
-}
-.article-nav ul li.active{
-    font-weight: bold;
-    border-bottom: 1px solid #323232;
-}
-.article-nav ul li.active:hover{
-    color:#000;
-}
-ul#article-nav-right li{
-    float: right;
-    margin:4px;
-    margin-right: 13px;
-    color:#000;
-}
-ul#article-nav-right li a, ul#article-nav-left li a {
-    color:#000;
-    padding: 0;
-}
-/*Article CONTENT*/
-.article-head-title{
-    font-family: Roboto,sans-serif;
-}
-.article-title{
-    font-family: 'Oswald', sans-serif;
-    font-weight:bold;
-    font-size: 27px;
-}
-.article-date{
-    font-family: 'Oswald', sans-serif;
-    font-size: 17px;
-}
-.article-col{
-    padding-top: 20px;
-    margin-bottom: 10px;
-    text-align: justify;
-}
-.article-col p{
-    font-size: 16px;
-    word-wrap: break-word;
-}
-.article-col span.see-more{
-    color:#e9af03;
-    font-weight: 800;
-    cursor: pointer;
-}
-.article-img-container div.link-category{
-    background-color: rgba(233,175,3,.7);
-    position: absolute;
-    top:0px;
-    right: 0px;
-    padding: 10px;
-}
-.article-img-container div.link-category a{
-    color:#FFF;
-    cursor: pointer;
-    font-size: 30px;
-}
-.article-col span.see-more:hover{
-    text-decoration: underline;
-}
-.article-link, .article-link:visited, .article-link:link, .pagination>li>a{
-    color: #323232;
-    text-decoration:none;
-}
-.head-title{
-    text-align: left;
-    font-size: 22px;
-    font-family: 'Oswald', sans-serif;
-    padding-bottom: 5px;
-    border-bottom: 1px solid black;
-}
-.article-popular-container a{
-    color: #323232;
-}
-.more-article-container .more-article-item{
-    margin: auto;
-    margin-bottom: 30px;
-}
-.more-article-container .article-img-container{
-    height: 140px;
-    overflow: hidden;
-}
-.pagination>li.active>a, .pagination>li.active>a:hover{
-    background-color: #e9af03;
-    border-color: #e9af03;
-}
-/*ADS*/
-#advertisement{
-    padding-top: 90px;
-    padding-left: 40px;
-}
-.ads-container div.ads-item{
-    max-width: 270px;
-    height: 220px;
-    width: 80%;
-    margin: auto;
-    margin-bottom: 10px;
-}
-.more-article-container, .follow-container{
-    width: 300px;
-    margin: auto;
-}
-.follow-container {
-    margin-bottom: 22px;
-}
-.fb-like-container{
-    overflow: hidden;
-}
-.more-article-container .article-title{
-    text-align: left;
-    font-size: 17px;
-}
-
-@media all and (max-width: 1024px) { /* screen size until 1024px */
-    h1 {
-        font-size: 30px; /* 1.5x default size */
-    }
-}
-@media all and (max-width: 985px) { /* screen size until 1200px */
-    h1 {
-        font-size: 30px; /* 1.5x default size */
-    }
-    .article-nav ul li{
-        margin-right: 2px;
-        font-size: 12px;
-    }
-
-}
-@media all and (max-width: 769px) { /* screen size until 767px */
-    h1 {
-        font-size: 25px; /* 1.2x default size */
-    }
-    .logo-container{
-        width: 250px;
-        margin: auto;
-    }
-    .article-img-container div.link-category{
-        position: absolute;
-        width: 100%;
-        top:inherit;
-        bottom:0px;
-        right: 0px;
-        padding: 10px;
-        text-align: right;
-    }
-    .article-img-container div.link-category a{
-        font-size: 25px;
-    }
-    /*Article MENU*/
-    .article-nav ul{
-        width: 265px;
-    }
-    .article-nav ul li{
-        margin-right: 5px;
-        font-size: 14px;
-    }
-    #article-nav-right{
-        display: none;
-    }
-    /*Article CONTENT*/
-    .article-title{
-        font-size: 24px;
-    }
-    .article-col {
-        padding-top: 10px;
-        margin-bottom: 0px;
-    }
-    .article-popular-container h3.article-title{
-        font-size: 20px;
-    }
-    /*ADS */
-    .more-article-container,.follow-container{
-        width: 100%;
-    }
-    .ads-container div.ads-item{
-        width: 100%;
-    }
-    div.ads-item img{
-        width: 90%;
-        height: auto;
-    }
-    .more-article-container, .follow-container{
-        width: 100%;
-    }
-    .more-article-container .article-img-container{
-        height: 140px;
-    }
-}
-@media all and (max-width: 720px) { /* screen size until 1200px */
-    .article-img-container div.link-category a{
-        font-size: 20px;
-    }
-    h1 {
-        font-size: 18px; /* 0.8x default size */
-    }
-    h4{
-        font-size: 16px;
-    }
-    .search-bar{
-        float:none;
-        width: 80%;
-        margin: auto;
-        padding-top: 0px;
-        padding-bottom: 10px;
-    }
-    .ads-container div.ads-item{
-        margin-bottom: 10px;
-    }
-    .article-body{
-        width: 100%;
-        margin: auto;
-    }
-    #advertisement{
-        width: 88%;
-        padding: 0;
-        margin: auto;
-    }
-    /*Article CONTENT*/
-    .article-title{
-        font-size: 22px;
-    }
-
-}
+hr{    border-top: 1px solid rgba(39, 16, 28, 0.76);}a{    color: rgb(238, 134, 7);}.clear{    clear:both;}.list-img-container{    margin: auto;}nav.sticky {    position: fixed;    font-size: 16px;    height: 60px!important;    width: 100%;    background: #191919;    text-align: left;    height: auto;    color: #fff;    z-index: 99;    /*override style bootstrap*/    border-color:transparent;    border-radius: 0;    // set animation    -webkit-transition: all 0.4s ease;    transition: all 0.4s ease;}.navbar-brand{    padding: 8px;}#content-body{    padding-top: 60px;}.header-container{    width:100%;    height:70px;    margin-bottom: 25px;}.right-navbar{    float:right;}.search-bar{    float:right;    padding-top: 14px;    width: 50%;}.search-bar input{    box-shadow: 0 0 5px #e8e8e8;}.search-bar input:focus{    box-shadow: 0 0 5px rgba(233,175,3, 1);    border-color: #e9af03;}.article-body{    font-family:Verdana, sans-serif;    font-size: 16px;    color:#323232;    padding: 15px;    width: 100%;}/*Article MENU*/.article-nav{    border-bottom: 1px solid #f5f5f5;    padding-left: 15px;    padding-bottom: 25px;}.article-nav ul{    list-style: none;    padding: 0;    margin: 0;}.article-nav ul li:hover,#article-nav-right li a:hover{    color:#e9af03;}.article-nav ul li{    display: inline-block;    font-family: Roboto,sans-serif;    text-transform:uppercase ;    margin-right: 20px;    padding-bottom: 5px;    cursor: pointer;}.article-nav ul li.active{    font-weight: bold;    border-bottom: 1px solid #323232;}.article-nav ul li.active:hover{    color:#000;}ul#article-nav-right li{    float: right;    margin:4px;    margin-right: 13px;    color:#000;}ul#article-nav-right li a, ul#article-nav-left li a {    color:#000;    padding: 0;}/*Article CONTENT*/.article-head-title{    font-family: Roboto,sans-serif;}.article-title{    font-family: 'Oswald', sans-serif;    font-weight:bold;    font-size: 27px;}.article-date{    font-family: 'Oswald', sans-serif;    font-size: 17px;}.article-col{    padding-top: 20px;    margin-bottom: 10px;    text-align: justify;}.article-col p{    font-size: 16px;    word-wrap: break-word;}.article-col span.see-more{    color:#e9af03;    font-weight: 800;    cursor: pointer;}.article-img-container div.link-category{    background-color: rgba(233,175,3,.7);    position: absolute;    top:0px;    right: 0px;    padding: 10px;}.article-img-container div.link-category a{    color:#FFF;    cursor: pointer;    font-size: 30px;}.article-col span.see-more:hover{    text-decoration: underline;}.article-link, .article-link:visited, .article-link:link, .pagination>li>a{    color: #323232;    text-decoration:none;}.head-title{    text-align: left;    font-size: 22px;    font-family: 'Oswald', sans-serif;    padding-bottom: 5px;    border-bottom: 1px solid black;}.article-popular-container a{    color: #323232;}.more-article-container .more-article-item{    margin: auto;    margin-bottom: 30px;}.more-article-container .article-img-container{    height: 140px;    overflow: hidden;}.pagination>li.active>a, .pagination>li.active>a:hover{    background-color: #e9af03;    border-color: #e9af03;}/*ADS*/#advertisement{    padding-top: 90px;    padding-left: 40px;}.ads-container div.ads-item{    max-width: 270px;    height: 220px;    width: 80%;    margin: auto;    margin-bottom: 10px;}.more-article-container, .follow-container{    width: 300px;    margin: auto;}.follow-container {    margin-bottom: 22px;}.fb-like-container{    overflow: hidden;}.more-article-container .article-title{    text-align: left;    font-size: 17px;}@media all and (max-width: 1024px) { /* screen size until 1024px */    h1 {        font-size: 30px; /* 1.5x default size */    }}@media all and (max-width: 985px) { /* screen size until 1200px */    h1 {        font-size: 30px; /* 1.5x default size */    }    .article-nav ul li{        margin-right: 2px;        font-size: 12px;    }}@media all and (max-width: 769px) { /* screen size until 767px */    h1 {        font-size: 25px; /* 1.2x default size */    }    .logo-container{        width: 250px;        margin: auto;    }    .article-img-container div.link-category{        position: absolute;        width: 100%;        top:inherit;        bottom:0px;        right: 0px;        padding: 10px;        text-align: right;    }    .article-img-container div.link-category a{        font-size: 25px;    }    /*Article MENU*/    .article-nav ul{        width: 265px;    }    .article-nav ul li{        margin-right: 5px;        font-size: 14px;    }    #article-nav-right{        display: none;    }    /*Article CONTENT*/    .article-title{        font-size: 24px;    }    .article-col {        padding-top: 10px;        margin-bottom: 0px;    }    .article-popular-container h3.article-title{        font-size: 20px;    }    /*ADS */    .more-article-container,.follow-container{        width: 100%;    }    .ads-container div.ads-item{        width: 100%;    }    div.ads-item img{        width: 90%;        height: auto;    }    .more-article-container, .follow-container{        width: 100%;    }    .more-article-container .article-img-container{        height: 140px;    }}@media all and (max-width: 720px) { /* screen size until 1200px */    .article-img-container div.link-category a{        font-size: 20px;    }    h1 {        font-size: 18px; /* 0.8x default size */    }    h4{        font-size: 16px;    }    .search-bar{        float:none;        width: 80%;        margin: auto;        padding-top: 0px;        padding-bottom: 10px;    }    .ads-container div.ads-item{        margin-bottom: 10px;    }    .article-body{        width: 100%;        margin: auto;    }    #advertisement{        width: 88%;        padding: 0;        margin: auto;    }    /*Article CONTENT*/    .article-title{        font-size: 22px;    }}
