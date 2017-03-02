@@ -139,7 +139,7 @@
                     $(".navbar-nav li").removeClass("active");
                     $(".navbar-nav li:nth-child(1)").addClass("active");
                     animationHome();
-                },300);
+                },900);
             }, 2000);
         });
 
@@ -166,8 +166,13 @@
         //Smoth Scroll
         $('#home-navbar ul li a').click(function () {
             var url = $(this).attr('href');
+            var offset_top = $(url).offset().top;
+            if(url == "#home-section"){
+                offset_top = 0;
+            }
+
             $('html,body').animate({
-                scrollTop: $(url).offset().top
+                scrollTop : offset_top
             }, 1000, 'swing');
             //$('#sidebar-wrapper').animate({width: 0}, {duration: 400});
             return false;
