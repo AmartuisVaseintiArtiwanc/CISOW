@@ -79,7 +79,7 @@
         function getCountLatestPost(){
 
             $this->db->from('tbl_cyberits_t_articles a');
-
+			$this->db->where('a.isActive', 1);
             return $this->db->count_all_results();
         }
 
@@ -125,6 +125,7 @@
             $this->db->join('tbl_cyberits_m_categories b', 'a.categoryID = b.categoryID');
 
             $this->db->where('b.category',$categoryName);
+			$this->db->where('a.isActive', 1);
 
             return $this->db->count_all_results();
         }
@@ -169,6 +170,7 @@
             $this->db->from('tbl_cyberits_t_articles a');
 
             $this->db->like('a.title',$search_name);
+			$this->db->where('a.isActive', 1);
 
             return $this->db->count_all_results();
         }
@@ -326,7 +328,7 @@
         function getCountArticleList(){
 
             $this->db->from('tbl_cyberits_t_articles a');
-
+			$this->db->where('a.isActive', 1);
             return $this->db->count_all_results();
 
         }

@@ -300,7 +300,7 @@ class Article extends CI_Controller{
 
 
 
-        $config['base_url']= site_url('fe/Article/articleListByCategory/'.$category_name);
+        $config['base_url']= site_url('fe/Article/articleCategory/'.$category_name);
 
         $config['total_rows'] = $count_category_post;
 
@@ -492,7 +492,7 @@ class Article extends CI_Controller{
 
 
 
-        $config['base_url']= site_url('fe/Article/articleByTags/'.$tag_name);
+        $config['base_url']= site_url('fe/Article/articleTag/'.$tag_name);
 
         $config['total_rows'] = $count_tag_post;
 
@@ -576,7 +576,7 @@ class Article extends CI_Controller{
 
 
 
-        $config['base_url']= site_url('fe/Article/articleByAuthor/'.$author_name);
+        $config['base_url']= site_url('fe/Article/articleAuthor/'.$author_name);
 
         $config['total_rows'] = $count_author_post;
 

@@ -99,9 +99,9 @@ class Parallax extends CI_Controller
 
             );  
 
-		$message =  'Name          		= '.$this->input->post('contactName').
+		$message =  'Email          		= '.$this->input->post('contactEmail').
 
-                '<br>Alamat Email = '.$this->input->post('contactEmail').
+                '<br>Subjek = '.$this->input->post('contactSubject').
 
                 '<br>Pesan				= '.$this->input->post('contactMessage');
 

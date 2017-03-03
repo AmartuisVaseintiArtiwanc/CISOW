@@ -104,7 +104,7 @@
 <div id="appointment_form" class="modal fade" tabindex="1" aria-labelledby="modal_appointment_form" aria-hidden="true">
     <?php $this->load->view('appointment_form_view'); ?>
 </div>
-
+<input type="hidden" name="site-url" id="site-url" value="<?php echo site_url();?>" />
 
 <script src="<?php echo base_url();?>assets/plugin/datepicker/bootstrap-datepicker.js"></script>
 <script src="<?php echo base_url();?>assets/custom/appointment_form_validation.js"></script>

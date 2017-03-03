@@ -390,13 +390,13 @@ $(function() {
 
               key_ajax_meeting_date == true && key_ajax_describe_project == true && key_ajax_location == true) {
 
-
+				var site_url = $("#site-url").val();
 
               $.ajax({
 
                   type : "POST",
 
-                  url : "<?php echo site_url('Parallax/Send_email_appointment'); ?>",
+                  url : site_url+"/Parallax/Send_email_appointment",
 
                   dataType : "json",
 
