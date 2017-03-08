@@ -47,7 +47,7 @@
 <nav class="navbar navbar-inverse header-nav sticky">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<?php echo base_url();?>"><img src="http://localhost/cisow/assets/image/logo/Logo_150_H_ppi.png" class="img-responsive" width="125"></a>
+            <a class="navbar-brand" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/image/logo/Logo_150_H_ppi.png" class="img-responsive" width="125"></a>
         </div>
         <div class=row">
             <form action="<?=site_url('fe/Article/articleListSearch')?>" method="get">
